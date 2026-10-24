@@ -47,7 +47,8 @@ contenedor.addEventListener("click", (event) => {
       gracias.textContent = "¡Gracias por visitar TechEvents CR!";
       tituloPrincipal.insertAdjacentElement("afterend", gracias);
     },
-    { once: true } 
+    { once: true } // se ejecuta solo la primera vez
+  );
 
   
   tituloPrincipal.addEventListener("click", (event) => {
