@@ -1,13 +1,4 @@
-// ===== eventos.js =====
-// Usa las variables globales `eventos` y `contenedor` definidas en app.js.
-// Por eso app.js debe cargarse antes en index.html.
 
-// Diferencia: con onclick solo se puede asignar UNA función por evento
-// (una nueva asignación reemplaza la anterior); con addEventListener se
-// pueden registrar VARIAS funciones para el mismo evento y además admite
-// opciones como { once: true }.
-
-// ---------- 1 y 2. Click en "Inscribirme" (delegación de eventos) ----------
 contenedor.addEventListener("click", (event) => {
   const boton = event.target;
   if (!boton.classList.contains("btn-inscribir")) return;
@@ -16,13 +7,13 @@ contenedor.addEventListener("click", (event) => {
   const id = Number(tarjeta.getAttribute("data-id"));
   const evento = eventos.find((e) => e.id === id);
 
-  // Disminuir cupos
+  
   if (evento.cupos > 0) {
     evento.cupos--;
     tarjeta.querySelector(".cupos").textContent = `Cupos disponibles: ${evento.cupos}`;
   }
 
-  // Cuando llegan a 0: deshabilitar y cambiar texto
+ 
   if (evento.cupos === 0) {
     boton.disabled = true;
     boton.textContent = "Agotado";
@@ -31,11 +22,7 @@ contenedor.addEventListener("click", (event) => {
   console.log(event.type, event.target, event.clientX, event.clientY);
 });
 
-// Las variables siguientes van dentro de bloques { } para no chocar con
-// constantes globales de app.js o debug.js (un const repetido entre
-// scripts causaría un SyntaxError).
 
-// ---------- 3. mouseover / mouseout con classList.toggle ----------
 {
   const tarjetas = document.querySelectorAll(".card");
 
@@ -49,7 +36,7 @@ contenedor.addEventListener("click", (event) => {
   });
 }
 
-// ---------- 4. Listener en el <h1> con { once: true } ----------
+
 {
   const tituloPrincipal = document.querySelector("h1");
 
@@ -60,11 +47,9 @@ contenedor.addEventListener("click", (event) => {
       gracias.textContent = "¡Gracias por visitar TechEvents CR!";
       tituloPrincipal.insertAdjacentElement("afterend", gracias);
     },
-    { once: true } // se ejecuta solo la primera vez
-  );
+    { once: true } 
 
-  // ---------- 5. Segundo listener de click en el mismo <h1> ----------
-  // No reemplaza al anterior: ambos se ejecutan en el primer click.
+  
   tituloPrincipal.addEventListener("click", (event) => {
     console.log(event.target, event.type);
   });
