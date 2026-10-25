@@ -10,7 +10,7 @@ function mostrarResumen(texto) {
  resumen.textContent = texto;
 }
 function registrarInscripcion() {
- const inscritos = Number(inputCantidad.value);
+const inscritos = Number(inputCantidad.value);
  totalInscritos = totalInscritos + inscritos;
  cuposDisponibles = cuposTotales - totalInscritos;
  if (cuposDisponibles > 0) {
