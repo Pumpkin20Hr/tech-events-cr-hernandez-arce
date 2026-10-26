@@ -67,7 +67,7 @@ tech-events-cr-hernandez-arce/
 
 ---
 
-## Pull Requests
+## Pull Requests# tech-events-cr-hernandez-arce
 
 Pull Requests integrados a `main`. Cada uno fue revisado y aprobado por el compañero antes del merge.
 
@@ -96,3 +96,4 @@ Los PR #2, #7, #8, #9, #10 y #16 se cerraron sin integrarse porque no cumplían 
 - Registrar varios listeners en un mismo elemento y usar la opción `once`.
 - Depurar con breakpoints, Step over/into/out, Watch y Scope en lugar de buscar errores a simple vista.
 - Trabajar en equipo con ramas y Pull Requests revisados por el compañero, sin commits directos a `main`.
+[README.md](https://github.com/user-attachments/files/33988294/README.md)
